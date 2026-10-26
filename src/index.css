@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --color-bg: #0a0b0f;
+  --color-bg-elevated: #12141c;
+  --color-text: #e8eaef;
+  --color-muted: #8b909d;
+  --color-accent: #5eead4;
+  --color-accent-dim: color-mix(in srgb, var(--color-accent) 35%, transparent);
+  --color-border: color-mix(in srgb, var(--color-accent) 18%, transparent);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-bg text-text font-sans antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, color-mix(in srgb, var(--color-accent) 8%, transparent), transparent),
+      radial-gradient(circle at 20% 80%, color-mix(in srgb, #6366f1 4%, transparent), transparent);
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-accent) 35%, transparent);
+    color: var(--color-text);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .hairline-border {
+    border: 1px solid var(--color-border);
+  }
+
+  .text-gradient-accent {
+    background: linear-gradient(135deg, var(--color-text), var(--color-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
