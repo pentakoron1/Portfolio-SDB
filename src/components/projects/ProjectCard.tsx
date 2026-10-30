@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef} from 'react'
 import type { Project } from '../../data/projects'
 import { useCardScrollRotation } from '../../hooks/useCardScrollRotation'
 import { ProjectWireCanvas } from '../three/ProjectWireCanvas'
@@ -12,16 +12,21 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const rotationY = useCardScrollRotation(cardRef, { turns: 0.75 })
 
   return (
-    <article
-      ref={cardRef}
-      className="grid gap-8 border-b border-border pb-14 last:border-b-0 last:pb-0 md:grid-cols-[minmax(180px,240px)_1fr] md:items-start"
-    >
-      <ProjectWireCanvas
-        modelPath={project.modelPath}
-        fallbackShape={project.fallbackShape}
-        rotationY={rotationY}
-      />
-      <div className="space-y-4">
+      <article
+          ref={cardRef}
+          className="relative overflow-hidden border-b border-border py-14 last:border-b-0"
+      >
+      {/* 3D layer: fills the card, behind the content, clicks pass through */}
+      <div className="pointer-events-none absolute inset-0 z-0 md:left-1/2" aria-hidden>
+        <ProjectWireCanvas
+            modelPath={project.modelPath}
+            fallbackShape={project.fallbackShape}
+            rotationY={rotationY}
+        />
+      </div>
+
+      {/* Content layer: on top */}
+      <div className="relative z-10 max-w-prose space-y-4">
         <h3 className="text-xl font-semibold tracking-tight md:text-2xl">{project.title}</h3>
         <p className="max-w-prose text-muted leading-relaxed">{project.description}</p>
         <ul className="flex flex-wrap gap-2">
