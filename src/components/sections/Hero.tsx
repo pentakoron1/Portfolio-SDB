@@ -10,7 +10,7 @@ export function Hero() {
   return (
    <section id="top" className="relative scroll-mt-24 overflow-hidden border-b border-border py-16 md:py-24">
   {/* 3D layer: full-section, in front of the text, clicks pass through */}
-  <div className="pointer-events-none absolute inset-0 z-20" aria-hidden>
+   <div className="pointer-events-none absolute inset-0 z-20 md:left-1/2" aria-hidden>
     <Suspense fallback={null}>
       <HeroCanvas>
         <ModelErrorBoundary fallback={<PlaceholderMesh />}>
