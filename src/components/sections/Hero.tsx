@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react'
 import { profile } from '../../data/profile'
 import { Model } from '../three/Model'
 import { PlaceholderMesh } from '../three/PlaceholderMesh'
+import { ModelErrorBoundary } from '../three/ModelErrorBoundary'
 
 const HeroCanvas = lazy(() => import('../three/HeroCanvas'))
 
@@ -39,13 +40,15 @@ export function Hero() {
           <Suspense
             fallback={<div className="aspect-square w-full animate-pulse bg-white/5" aria-hidden />}
           >
-            <HeroCanvas>
-              {profile.heroModelPath ? (
-                <Model path={profile.heroModelPath} />
-              ) : (
-                <PlaceholderMesh />
-              )}
-            </HeroCanvas>
+            <ModelErrorBoundary fallback={<PlaceholderMesh />}>
+              <HeroCanvas>
+                {profile.heroModelPath ? (
+                  <Model path={profile.heroModelPath} />
+                ) : (
+                  <PlaceholderMesh />
+                )}
+              </HeroCanvas>
+            </ModelErrorBoundary>
           </Suspense>
         </div>
       </div>

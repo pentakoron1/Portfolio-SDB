@@ -3,7 +3,7 @@ export const profile = {
   role: 'Engineering',
   tagline: 'Building reliable systems at the edge of what is possible.',
   email: 'hello@example.com',
-  heroModelPath: undefined as string | undefined,
+  heroModelPath: '/models/double_helical_antennas_for_fpv_video_system.glb',
   links: {
     github: 'https://github.com',
     linkedin: 'https://linkedin.com',

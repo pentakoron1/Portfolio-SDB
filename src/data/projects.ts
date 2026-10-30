@@ -19,6 +19,7 @@ export const projects: Project[] = [
       'Low-latency ground segment tooling for telemetry ingest, visualization, and anomaly triage across distributed ground stations.',
     tags: ['Rust', 'gRPC', 'Timeseries'],
     links: [{ label: 'Case study', href: '#' }],
+    //modelPath: '/models/double_helical_antennas_for_fpv_video_system.glb',
     fallbackShape: 'icosahedron',
   },
   {
