@@ -99,10 +99,10 @@ export function ParallaxScene({ layers, aspect, start = 0.5, minCover = 1.5, tex
                 ))}
                 <div
                     ref={textRef}
-                    className="pointer-events-none relative mx-auto max-w-5xl px-6 pt-32"
+                    className="pointer-events-none absolute inset-0 flex pt-32 justify-center px-6 text-center will-change-transform"
                     style={{ zIndex: textZ }}
                 >
-                    <div className="pointer-events-auto">{children}</div>
+                    <div className="pointer-events-auto max-w-5xl">{children}</div>
                 </div>
             </div>
         </section>
