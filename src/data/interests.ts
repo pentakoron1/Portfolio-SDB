@@ -1,15 +1,30 @@
 export const interestTree: Record<string, Record<string, string[]>> = {
     Videography: {
-        'FPV Drone': ['DJI Goggles', 'Betaflight', 'Blender'],
-        'Video Editing': ['DaVinci Resolve', 'After Effects'],
-        Photography: ['Lightroom', 'DaVinci Resolve'],
+        'FPV Drone': ['Betaflight', 'Blender'],
+        'Video Editing': ['DaVinci Resolve'],
+        'Filmaking':[],
     },
     Electronics: {
-        Soldering: ['KiCad', 'Soldering Iron'],
-        Microcontrollers: ['Arduino IDE', 'KiCad', 'ESP32'],
+        Soldering: ['KiCad'],
+        Microcontrollers: ['Arduino', 'KiCad'],
+        'FPV Drone':['Betaflight', 'Blender'],
     },
-    '3D Design': {
-        CAD: ['Onshape', 'Fusion 360'],
-        '3D Printing': ['Onshape', 'PrusaSlicer'],
+    Programming: {
+        'App Dev': ['Flutter', 'Dart'],
+        'Web Dev': ['HTML', 'TypeScript'],
+        Microcontrollers: ['C'],
+    },
+    Design: {
+        CAD: ['Onshape', 'Shap3D'],
+        '3D Printing': ['Onshape', 'Shap3D', 'Blender'],
+        'Graphic/logo Design': ['Inkscape', 'Affinity'],
+        'Drawing': [],
+    },
+    Sports: {
+        Calisthenics:[],
+        Running: [],
+        Skating: [],
+        Bouldering: [],
+        Trampoline: [],
     },
 }

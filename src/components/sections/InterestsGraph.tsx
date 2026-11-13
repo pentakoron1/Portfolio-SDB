@@ -7,8 +7,13 @@ type NodeType = 'field' | 'hobby' | 'tool'
 type GNode = NodeObject & { id: string; type: NodeType; r: number }
 type GLink = { source: string | GNode; target: string | GNode }
 
+const LABEL_COLORS: Record<NodeType, string> = {
+    field: '#e3e3ea',
+    hobby: '#c0c0c6',
+    tool: '#919191',
+}
 const COLORS: Record<NodeType, string> = { field: '#ff8a1f', hobby: '#f4f4f4', tool: '#a45cff' }
-const BASE: Record<NodeType, number> = { field: 7, hobby: 5, tool: 3 } //Dot size
+const BASE: Record<NodeType, number> = { field: 4, hobby: 3, tool: 3 } //Dot size
 const LINK_DIST = { field: 85, tool: 55 }
 const CIRCLE_R = 230 // radius of the boundary circle, in graph units
 const SHOW_TOOL_LABELS = true // false = only show tool names while hovering
@@ -110,10 +115,10 @@ export function InterestsGraph() {
                     ctx.font = `${n.type === 'field' ? '600 ' : ''}${size}px system-ui, sans-serif`
                     ctx.textAlign = 'center'
                     ctx.textBaseline = 'top'
-                    ctx.fillStyle = '#e8e8ee'
+                    ctx.fillStyle = LABEL_COLORS[n.type]
                     ctx.fillText(n.id, n.x ?? 0, (n.y ?? 0) + n.r + 2 / scale)
                 }
-                ctx.globalAlpha = 1
+                ctx.globalAlpha = 1;
             })
             .nodePointerAreaPaint((node, color, ctx) => {
                 const n = node as GNode
