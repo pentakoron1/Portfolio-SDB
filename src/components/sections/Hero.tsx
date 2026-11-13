@@ -1,29 +1,26 @@
-import { useParallax } from '../three/UseParallax'
+
+import { ParallaxImageLayer } from '../three/ParallaxImageLayer'
 import { profile } from '../../data/profile'
 
 export function Hero() {
-    const nameRef = useParallax<HTMLDivElement>(0.15)
-    const textRef = useParallax<HTMLDivElement>(0.3)
-
     return (
         <section
             id="top"
-            className="relative scroll-mt-24 overflow-hidden border-b border-border py-16 md:py-24"
+            className="relative h-[90vh] min-h-125 overflow-hidden border-b border-border"
         >
-            {/* 3D layer stays as it was */}
+            <ParallaxImageLayer src="/images/hero/sky.webp"        speed={0.5}  z={0} />
+            <ParallaxImageLayer src="/images/hero/backmountains.webp"  speed={0.35} z={1} />
+            <ParallaxImageLayer src="/images/hero/formountains.webp"      speed={0.2}  z={2} />
 
-            <div className="relative z-10 mx-auto max-w-5xl px-6">
-                <div ref={nameRef}>
-                    <h1 className="text-4xl font-bold md:text-6xl">
-                        <span className="text-gradient-accent">{profile.name}</span>
-                    </h1>
-                </div>
-                <div ref={textRef} className="mt-6 space-y-6">
-                    <p className="font-mono text-sm text-muted">{profile.role}</p>
-                    <p className="max-w-md text-lg text-text/90">{profile.tagline}</p>
-                    {/* buttons */}
-                </div>
+            {/* text sits between the mid layers and the foreground */}
+            <div className="relative z-3 mx-auto max-w-5xl px-6 pt-32">
+                <h1 className="text-5xl font-bold">
+                    <span className="text-gradient-accent">{profile.name}</span>
+                </h1>
+                <p className="mt-4 text-lg">{profile.tagline}</p>
             </div>
+
+            <ParallaxImageLayer src="/images/hero/foreground.webp" speed={0.05} z={4} />
         </section>
     )
 }
