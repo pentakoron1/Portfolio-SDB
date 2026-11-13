@@ -15,7 +15,8 @@ type Props = {
     children?: ReactNode
 }
 
-export function ParallaxScene({ layers, aspect, start = 0.5, minCover = 2, textZ = 1.5, children }: Props) {
+export function ParallaxScene({ layers, aspect, start = 0.5, minCover = 1.5, textZ = 1.5, children }: Props) {
+    const textRef = useRef<HTMLDivElement>(null)
     const outerRef = useRef<HTMLElement>(null)
     const layerRefs = useRef<(HTMLDivElement | null)[]>([])
     const [vp, setVp] = useState({ w: 0, h: 0 })
@@ -31,30 +32,42 @@ export function ParallaxScene({ layers, aspect, start = 0.5, minCover = 2, textZ
     const imgW = imgH * aspect
     const travel = imgH - vp.h              // hidden image height
     const scrollDist = travel * (1 - start) // only the part below the start point is revealed
+    const textPan = 0.3
 
     useEffect(() => {
         const outer = outerRef.current
         if (!outer) return
 
-        const apply = (progress: number) => {
+        const apply = (progress: number, exit: number) => {
             layers.forEach((layer, i) => {
                 const el = layerRefs.current[i]
                 if (!el) return
                 const offset = travel * (start + (1 - start) * progress * layer.pan)
-                el.style.transform = `translate3d(0, ${-offset}px, 0)`
+                // exit phase: lagging layers get pushed back down so they keep moving slower than the page
+                const extra = Math.min(exit * (1 - layer.pan), offset) // clamp so no gap opens at the top
+                el.style.transform = `translate3d(0, ${-offset + extra}px, 0)`
             })
+            const t = textRef.current
+            if (t) {
+                // pinned phase: text drifts up slowly with progress; exit phase: lags behind the page
+                const move = progress * scrollDist * textPan
+                const lag = exit * (1 - textPan)
+                t.style.transform = `translate3d(0, ${-move + lag}px, 0)`
+            }
         }
 
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            apply(0)
+            apply(0, 0)
             return
         }
 
         let frame = 0
         const update = () => {
             frame = 0
-            const p = scrollDist > 0 ? -outer.getBoundingClientRect().top / scrollDist : 0
-            apply(Math.min(Math.max(p, 0), 1))
+            const scrolled = -outer.getBoundingClientRect().top
+            const p = scrollDist > 0 ? scrolled / scrollDist : 0
+            const exit = Math.min(Math.max(scrolled - scrollDist, 0), vp.h) // 0 -> screen height
+            apply(Math.min(Math.max(p, 0), 1), exit)
         }
         const onScroll = () => {
             if (!frame) frame = requestAnimationFrame(update)
@@ -66,7 +79,7 @@ export function ParallaxScene({ layers, aspect, start = 0.5, minCover = 2, textZ
             window.removeEventListener('scroll', onScroll)
             cancelAnimationFrame(frame)
         }
-    }, [layers, travel, scrollDist, start])
+    }, [layers, travel, scrollDist, start, vp.h, textPan])
 
     return (
         <section ref={outerRef} id="top" className="relative" style={{ height: vp.h + scrollDist }}>
@@ -85,6 +98,7 @@ export function ParallaxScene({ layers, aspect, start = 0.5, minCover = 2, textZ
                     </div>
                 ))}
                 <div
+                    ref={textRef}
                     className="pointer-events-none relative mx-auto max-w-5xl px-6 pt-32"
                     style={{ zIndex: textZ }}
                 >
