@@ -19,7 +19,7 @@ export const projects: Project[] = [
       'Low-latency ground segment tooling for telemetry ingest, visualization, and anomaly triage across distributed ground stations.',
     tags: ['Rust', 'gRPC', 'Timeseries'],
     links: [{ label: 'Case study', href: '#' }],
-    //modelPath: '/models/double_helical_antennas_for_fpv_video_system.glb',
+    modelPath: '/models/double_helical_antennas_for_fpv_video_system.glb',
     fallbackShape: 'icosahedron',
   },
   {
@@ -29,6 +29,7 @@ export const projects: Project[] = [
       'Embedded attitude control firmware with sensor fusion, fault detection, and hardware-in-the-loop validation on a custom rig.',
     tags: ['C', 'FreeRTOS', 'Control'],
     links: [{ label: 'GitHub', href: '#' }],
+    modelPath: '/models/double_helical_antennas_for_fpv_video_system.glb',
     fallbackShape: 'torus',
   },
   {
@@ -38,6 +39,7 @@ export const projects: Project[] = [
       'Environmental sensing mesh for sealed test chambers: calibration pipelines, edge aggregation, and operator dashboards.',
     tags: ['Python', 'React', 'MQTT'],
     links: [{ label: 'Demo', href: '#' }],
+    modelPath: '/models/double_helical_antennas_for_fpv_video_system.glb',
     fallbackShape: 'octahedron',
   },
   {
@@ -47,6 +49,7 @@ export const projects: Project[] = [
       'Batch and streaming processing for instrument captures, including denoising, feature extraction, and reproducible notebooks.',
     tags: ['Python', 'NumPy', 'Parquet'],
     links: [{ label: 'Paper', href: '#' }],
+    modelPath: '/models/double_helical_antennas_for_fpv_video_system.glb',
     fallbackShape: 'dodecahedron',
   },
 ]

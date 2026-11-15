@@ -5,6 +5,7 @@ import { ProjectWireCanvas } from '../three/ProjectWireCanvas'
 
 type ProjectCardProps = {
   project: Project
+  onActive: (id: string | null) => void
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
