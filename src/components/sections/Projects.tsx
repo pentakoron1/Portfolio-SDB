@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { projectModelPaths, projects } from '../../data/projects'
 import { ProjectCard } from '../projects/ProjectCard'
-import { ProjectViewer } from '../three/ProjectViewer'
+import { ProjectModel } from '../three/ProjectModel.tsx'
 import { Section } from '../layout/Section'
 
 export function Projects() {
@@ -24,7 +24,7 @@ export function Projects() {
 
     return (
         <Section id="projects" eyebrow="Manifest" title="Projects">
-            <ProjectViewer project={active} dragYaw={dragYaw} />
+            <ProjectModel project={active} dragYaw={dragYaw} />
 
             <div className="relative z-10 space-y-14">
                 {projects.map((project) => (
