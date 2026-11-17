@@ -27,11 +27,11 @@ export const projects: Project[] = [
     id: 'kolibrium',
     title: 'Kolibrium ',
     description:
-        '*Creating the tiniest bluetooth gaming controller with joystick ever.*\n\n Together with 2 of my classmates, we started this project in 2025 and it is still ongoing right now. ' +
-        'With a custom PCB, we managed to create the smallest controller of its kind, with integrated joystick, gyroscope, screen and 12 different buttons. ' +
-        '\n\nIn the kolibrium team, I\'m responsible of all coding, that means managing the bluetooth connection, HID profiles, on display graphics, etc. ' +
-        'I\'m therefore trying to make the software compatible with as many operating systems as possible, with a real time interface on the display that helps the user seeing which inputs are used, as well as having battery and blutooth information. ' +
-        '\n\nI see the user experience  as something that should have the least amount of friction possible, without limiting the full potential of the hardware.  Our first prototype already works with windows and android, so you can already play games with it, or even control slides of a PowerPoint presentation! ',
+        '*Creating the tiniest **bluetooth gaming controller** with joystick ever.*\n\n Together with 2 of my classmates, we started this project in 2025 and it is still ongoing right now. ' +
+        'With a custom PCB, we managed to create (probably) the smallest controller of its kind, with integrated joystick, gyroscope, screen and 12 different buttons. ' +
+        '\n\nIn the kolibrium team, I\'m responsible of all **coding**, that means managing the bluetooth connection, HID profiles, on-display graphics, etc. ' +
+        'I\'m therefore trying to make the software compatible with as many operating systems as possible, with a real time interface on the display that helps the user seeing which inputs are used, as well as having battery and bluetooth information. ' +
+        '\n\nI see the **user experience**  as something that should have the least amount of friction possible, without limiting the full potential of the hardware.  Our first prototype already works with windows and android, so you can already play games with it, or even control slides of a PowerPoint presentation! ',
     tags: ['electronics', 'microcontrollers', 'coding'],
     links: [{ label: 'GitHub', href: '#' }],
     modelPath: '/models/kolibrium_V1-0.glb',
@@ -41,7 +41,12 @@ export const projects: Project[] = [
     id: 'brazier-app',
     title: 'Brazier',
     description:
-      'Brazier is an app I\'m devlopping with the flutter stack, that will be available cross platform. The core concept of Brazier is that it lets you track the use of items you bought, showing how much they costs you per month. You can thus also easily compare the long term rentability of a single purchase VS a subscription. My goal is too make the app as user friendly as possible, while exploring concepts that no other app have used. The app is on the process being available for everyone on PlayStore, and should be available on Fdroid by the end of 2026 (the #1 open-source apps platform).',
+      '*Fully opensource personal finance app*' +
+      '\n\nBrazier is an app I\'m devlopping with the **flutter** stack, that will be available cross platform. ' +
+      'The core concept of Brazier is that it lets you track the use of items you bought, showing how much they costs you per month. ' +
+      'You can thus also easily compare the long term rentability of a single purchase VS a subscription. ' +
+      '\n\nMy goal is too make the app as user friendly as possible, while exploring concepts that no other app have used. ' +
+      'The app is on the process being available for everyone on **PlayStore**, and should be available on Fdroid by the end of 2026 (the #1 open-source apps platform).',
     tags: ['Flutter', 'Mobile App', 'Open-source'],
     links: [{ label: 'Github', href: 'https://github.com/pentakoron1/brazier' }],
     fallbackShape: 'octahedron',
