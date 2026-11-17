@@ -16,8 +16,8 @@ export const projects: Project[] = [
     id: 'cansat',
     title: 'Astoria CanSat',
     description:
-        'The winning Can-sized satellite project.' +
-        '\nI was part of the **Team Astoria** from Institut Notre‑Dame d’Arlon, which won the national winner title at **CanSat Belgium**, rewarded by the opportunity to represent the country at the ESA European event (2 days trip to ESTEC) and another 5 days trip to Toulouse to explore aerospace engineering.\n',
+        '*The winning Can-sized satellite project.*' +
+        '\n\nI was part of the  **Team Astoria** from Institut Notre‑Dame d’Arlon, which won the national winner title at **CanSat Belgium**, rewarded by the opportunity to represent the country at the ESA European event (2 days trip to ESTEC) and another 5 days trip to Toulouse to explore aerospace engineering.\n',
     tags: ['Aerospace', '3D design', 'Engineering'],
     links: [{ label: 'Astoria website', href: 'https://astoria-cansat1.odoo.com' }],
     modelPath: '/models/double_helical_antennas_for_fpv_video_system.glb',
@@ -27,7 +27,11 @@ export const projects: Project[] = [
     id: 'kolibrium',
     title: 'Kolibrium ',
     description:
-        'Together with 2 of my fellow students, we started this project in 2025 and it is still ongoing right now. With a custom PCB, we managed to create the smallest controller of its kind, with integrated joystick, gyroscope, screen and 12 different buttons. In the kolibrium team, I\'m responsible of all coding, that means managing the bluetooth connection, HID profiles, on display graphics, etc. I\'m therefore trying to make the software compatible with as many operating systems as possible, with a real time interface on the display that helps the user seeing which inputs are used, as well as having battery and blutooth information. I see the user experience  as something that should have the least amount of friction possible, without limiting the full potential of the hardware.  Our first prototype already works with windows and android, so you can already play games with it, or even control slides of a PowerPoint presentation! ',
+        '*Creating the tiniest bluetooth gaming controller with joystick ever.*\n\n Together with 2 of my classmates, we started this project in 2025 and it is still ongoing right now. ' +
+        'With a custom PCB, we managed to create the smallest controller of its kind, with integrated joystick, gyroscope, screen and 12 different buttons. ' +
+        '\n\nIn the kolibrium team, I\'m responsible of all coding, that means managing the bluetooth connection, HID profiles, on display graphics, etc. ' +
+        'I\'m therefore trying to make the software compatible with as many operating systems as possible, with a real time interface on the display that helps the user seeing which inputs are used, as well as having battery and blutooth information. ' +
+        '\n\nI see the user experience  as something that should have the least amount of friction possible, without limiting the full potential of the hardware.  Our first prototype already works with windows and android, so you can already play games with it, or even control slides of a PowerPoint presentation! ',
     tags: ['electronics', 'microcontrollers', 'coding'],
     links: [{ label: 'GitHub', href: '#' }],
     modelPath: '/models/kolibrium_V1-0.glb',

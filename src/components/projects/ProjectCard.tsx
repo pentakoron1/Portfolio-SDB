@@ -1,5 +1,6 @@
 import type { Project } from '../../data/projects'
 import { ProjectModel } from '../three/ProjectModel'
+import ReactMarkdown from 'react-markdown'
 
 export function ProjectCard({ project }: { project: Project }) {
     return (
@@ -14,7 +15,9 @@ export function ProjectCard({ project }: { project: Project }) {
                 className={`relative z-10 max-w-prose space-y-4 ${project.modelPath ? 'md:max-w-[45%]' : ''}`}
             >
                 <h3 className="text-xl font-semibold tracking-tight md:text-2xl">{project.title}</h3>
-                <p className="max-w-prose leading-relaxed text-muted">{project.description}</p>
+                <div className="max-w-prose space-y-3 leading-relaxed text-muted">
+                    <ReactMarkdown>{project.description}</ReactMarkdown>
+                </div>
                 <ul className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                         <li
