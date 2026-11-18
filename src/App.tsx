@@ -5,6 +5,7 @@ import { Contact } from './components/sections/Contact'
 import { Hero } from './components/sections/Hero'
 import { Projects } from './components/sections/Projects'
 import { InterestsGraph } from './components/sections/InterestsGraph'
+import {Education} from "./components/sections/Education.tsx";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Hero />
         <About />
         <Projects />
+        <Education />
         <InterestsGraph />
         <Contact />
       </main>
