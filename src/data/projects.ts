@@ -13,41 +13,43 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: 'orbital-link',
-    title: 'Orbital Link',
+    id: 'cansat',
+    title: 'Astoria CanSat',
     description:
-      'Low-latency ground segment tooling for telemetry ingest, visualization, and anomaly triage across distributed ground stations.',
-    tags: ['Rust', 'gRPC', 'Timeseries'],
-    links: [{ label: 'Case study', href: '#' }],
-    //modelPath: '/models/double_helical_antennas_for_fpv_video_system.glb',
+        '*The winning Can-sized satellite project.*' +
+        '\n\nI was part of the  **Team Astoria** from Institut Notre‑Dame d’Arlon, which won the national winner title at **CanSat Belgium**, rewarded by the opportunity to represent the country at the ESA European event (2 days trip to ESTEC) and another 5 days trip to Toulouse to explore aerospace engineering.\n',
+    tags: ['Aerospace', '3D design', 'Engineering'],
+    links: [{ label: 'Astoria website', href: 'https://astoria-cansat1.odoo.com' }],
+    modelPath: '/models/double_helical_antennas_for_fpv_video_system.glb',
     fallbackShape: 'icosahedron',
   },
   {
-    id: 'reaction-wheel',
-    title: 'Reaction Wheel Controller',
+    id: 'kolibrium',
+    title: 'Kolibrium ',
     description:
-      'Embedded attitude control firmware with sensor fusion, fault detection, and hardware-in-the-loop validation on a custom rig.',
-    tags: ['C', 'FreeRTOS', 'Control'],
+        '*Creating the tiniest **bluetooth gaming controller** with joystick ever.*\n\n Together with 2 of my classmates, we started this project in 2025 and it is still ongoing right now. ' +
+        'With a custom PCB, we managed to create (probably) the smallest controller of its kind, with integrated joystick, gyroscope, screen and 12 different buttons. ' +
+        '\n\nIn the kolibrium team, I\'m responsible of all **coding**, that means managing the bluetooth connection, HID profiles, on-display graphics, etc. ' +
+        'I\'m therefore trying to make the software compatible with as many operating systems as possible, with a real time interface on the display that helps the user seeing which inputs are used, as well as having battery and bluetooth information. ' +
+        '\n\nI see the **user experience**  as something that should have the least amount of friction possible, without limiting the full potential of the hardware.  Our first prototype already works with windows and android, so you can already play games with it, or even control slides of a PowerPoint presentation! ',
+    tags: ['electronics', 'microcontrollers', 'coding'],
     links: [{ label: 'GitHub', href: '#' }],
+    modelPath: '/models/kolibrium_V1-0.glb',
     fallbackShape: 'torus',
   },
   {
-    id: 'habitat-monitor',
-    title: 'Habitat Monitor',
+    id: 'brazier-app',
+    title: 'Brazier',
     description:
-      'Environmental sensing mesh for sealed test chambers: calibration pipelines, edge aggregation, and operator dashboards.',
-    tags: ['Python', 'React', 'MQTT'],
-    links: [{ label: 'Demo', href: '#' }],
+      '*Fully opensource personal finance app*' +
+      '\n\nBrazier is an app I\'m devlopping with the **flutter** stack, that will be available cross platform. ' +
+      'The core concept of Brazier is that it lets you track the use of items you bought, showing how much they costs you per month. ' +
+      'You can thus also easily compare the long term rentability of a single purchase VS a subscription. ' +
+      '\n\nMy goal is too make the app as user friendly as possible, while exploring concepts that no other app have used. ' +
+      'The app is on the process being available for everyone on **PlayStore**, and should be available on Fdroid by the end of 2026 (the #1 open-source apps platform).',
+    tags: ['Flutter', 'Mobile App', 'Open-source'],
+    links: [{ label: 'Github', href: 'https://github.com/pentakoron1/brazier' }],
     fallbackShape: 'octahedron',
-  },
-  {
-    id: 'spectral-pipeline',
-    title: 'Spectral Pipeline',
-    description:
-      'Batch and streaming processing for instrument captures, including denoising, feature extraction, and reproducible notebooks.',
-    tags: ['Python', 'NumPy', 'Parquet'],
-    links: [{ label: 'Paper', href: '#' }],
-    fallbackShape: 'dodecahedron',
   },
 ]
 
