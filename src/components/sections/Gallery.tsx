@@ -2,29 +2,27 @@ import { useState } from 'react'
 import { galleryImages } from '../../data/gallery'
 import { Section } from '../layout/Section'
 import { Lightbox } from '../three/Lightbox'
+import {TiltCard} from "../three/TiltCard.tsx";
 
 export function Gallery() {
     const [index, setIndex] = useState<number | null>(null)
 
     return (
         <Section id="gallery" eyebrow="Archive" title="Gallery">
-            <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+            <ul className="columns-2 gap-3 sm:columns-3 lg:columns-4">
                 {galleryImages.map((img, i) => (
-                    <li key={img.src}>
-                        <button
-                            type="button"
-                            onClick={() => setIndex(i)}
-                            aria-label={`Open: ${img.caption}`}
-                            className="hairline-border group block aspect-square w-full overflow-hidden"
-                        >
+                    <li key={img.src} className="mb-3 break-inside-avoid">
+                        <TiltCard onClick={() => setIndex(i)} label={`Open: ${img.caption}`}>
                             <img
                                 src={img.thumb ?? img.src}
                                 alt={img.alt}
+                                width={img.width}
+                                height={img.height}
                                 loading="lazy"
                                 decoding="async"
-                                className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                                className="block h-auto w-full"
                             />
-                        </button>
+                        </TiltCard>
                     </li>
                 ))}
             </ul>
