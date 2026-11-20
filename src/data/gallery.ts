@@ -20,5 +20,31 @@ export const galleryImages: GalleryImage[] = [
         alt: 'Thumbnail of the "Define Freedom shortfilm',
         caption: 'My shortfilm',
     },
-    // ...add as many as you like
+    {
+        src: asset('/images/gallery/design_process.webp'),
+        alt: 'Design Process of a 3D logo',
+        caption: 'Design process of a 3D logo using Inkscape and Blender',
+    },
+    {
+        src: asset('/images/gallery/cansat_astoria_wallpaper.webp'),
+        alt: 'Exploded View of the Astoria CanSat',
+        caption: '3D render for the CanSat project, showing an exploded view of all our components',
+    },
+    {
+        src: asset('/images/gallery/astoria_electric_diagram.webp'),
+        alt: 'Electric diagram of Astoria CanSat',
+        caption: 'Electric diagram I made for Astoria, showing all components and their connections',
+    },
+    {
+        src: asset('/images/gallery/jetpack_man.webp'),
+        alt: 'Fisheye render of "Jetpack Man" asset for Unity',
+        caption: 'Low-Poly Jetpack character I made for Unity Asset Store. It includes fire particles and animations.',
+    },
+    {
+        src: asset('/images/gallery/fpv_props_guard.webp'),
+        alt: '3D printed Propeller Guards on FPV drone',
+        caption: '3D printed Propeller Guards I designed for my FPV drone',
+    },
+
+
 ]
