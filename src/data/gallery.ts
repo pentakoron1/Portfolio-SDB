@@ -5,6 +5,8 @@ export type GalleryImage = {
     thumb?: string   // optional smaller version for the grid
     alt: string      // describes the image for screen readers
     caption: string  // subtitle shown under the picture in the carousel
+    width?: number   // original pixel size, used to reserve space before the image loads
+    height?: number
 }
 
 export const galleryImages: GalleryImage[] = [
