@@ -1,12 +1,14 @@
+import {asset} from "../../lib/url.ts";
+
 
 import { ParallaxScene } from '../three/ParallaxScene'
 import { profile } from '../../data/profile'
 
 const layers = [
-    { src: '/images/hero/sky.webp',        pan: 0, z: 0 },
-    { src: '/images/hero/backmountains.webp',  pan: 0.2, z: 1 },
-    { src: '/images/hero/formountains.webp',  pan: 0.5, z: 2 },
-    { src: '/images/hero/foreground.webp', pan: 1,   z: 3 },
+    { src: asset('/images/hero/sky.webp'),        pan: 0, z: 0 },
+    { src: asset('/images/hero/backmountains.webp'),  pan: 0.2, z: 1 },
+    { src: asset('/images/hero/formountains.webp'),  pan: 0.5, z: 2 },
+    { src: asset('/images/hero/foreground.webp'), pan: 1,   z: 3 },
 ]
 
 export function Hero() {

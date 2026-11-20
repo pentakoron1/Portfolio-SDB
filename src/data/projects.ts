@@ -1,4 +1,5 @@
 export type WireframeShape = 'icosahedron' | 'torus' | 'octahedron' | 'dodecahedron'
+import {asset} from "../lib/url.ts";
 
 export type Project = {
   id: string
@@ -20,7 +21,7 @@ export const projects: Project[] = [
         '\n\nI was part of the  **Team Astoria** from Institut Notre‑Dame d’Arlon, which won the national winner title at **CanSat Belgium**, rewarded by the opportunity to represent the country at the ESA European event (2 days trip to ESTEC) and another 5 days trip to Toulouse to explore aerospace engineering.\n',
     tags: ['Aerospace', '3D design', 'Engineering'],
     links: [{ label: 'Astoria website', href: 'https://astoria-cansat1.odoo.com' }],
-    modelPath: '/models/double_helical_antennas_for_fpv_video_system.glb',
+    modelPath: asset('/models/double_helical_antennas_for_fpv_video_system.glb'),
     fallbackShape: 'icosahedron',
   },
   {
@@ -34,7 +35,7 @@ export const projects: Project[] = [
         '\n\nI see the **user experience**  as something that should have the least amount of friction possible, without limiting the full potential of the hardware.  Our first prototype already works with windows and android, so you can already play games with it, or even control slides of a PowerPoint presentation! ',
     tags: ['electronics', 'microcontrollers', 'coding'],
     links: [{ label: 'GitHub', href: '#' }],
-    modelPath: '/models/kolibrium_V1-0.glb',
+    modelPath: asset('/models/kolibrium_V1-0.glb'),
     fallbackShape: 'torus',
   },
   {
