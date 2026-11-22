@@ -7,7 +7,7 @@
   --color-bg-elevated: #12141c;
   --color-text: #e8eaef;
   --color-muted: #8b909d;
-  --color-accent: #5eead4;
+  --color-accent: #946ad3;
   --color-accent-dim: color-mix(in srgb, var(--color-accent) 35%, transparent);
   --color-border: color-mix(in srgb, var(--color-accent) 18%, transparent);
 }

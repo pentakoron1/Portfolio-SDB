@@ -1,7 +1,7 @@
 export const profile = {
   name: 'Sylvain De Bel',
   role: 'Studying sustainable engineering',
-  tagline: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  tagline: 'Sustainable Engineering and future Technologies [SET] student.',
   email: 'hello@world.com',
   heroModelPath: '/models/double_helical_antennas_for_fpv_video_system.glb',
   links: {

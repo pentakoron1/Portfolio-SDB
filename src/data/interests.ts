@@ -1,3 +1,9 @@
+export const interestsText = {
+    description:
+    'I\'m always eager to learn new stuff and that\'s how I ended up with many different interests.\n' +
+        'I decided to represent them with a web graph, as many of them are interlinked.\n\n\n',
+} as const
+
 export const interestTree: Record<string, Record<string, string[]>> = {
     Videography: {
         'FPV Drone': ['Betaflight', 'Blender'],

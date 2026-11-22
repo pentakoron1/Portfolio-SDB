@@ -13,9 +13,10 @@ type Props = {
     minCover?: number
     textZ?: number // stacking position of the text; between two layer z values to sit between them
     children?: ReactNode
+    bottom?: ReactNode // content pinned to the bottom of the screen
 }
 
-export function ParallaxScene({ layers, aspect, start = 0.5, minCover = 1.5, textZ = 1.5, children }: Props) {
+export function ParallaxScene({ layers, aspect, start = 0.5, minCover = 1.5, textZ = 1.5, children, bottom }: Props) {
     const textRef = useRef<HTMLDivElement>(null)
     const outerRef = useRef<HTMLElement>(null)
     const layerRefs = useRef<(HTMLDivElement | null)[]>([])
@@ -97,13 +98,23 @@ export function ParallaxScene({ layers, aspect, start = 0.5, minCover = 1.5, tex
                         <img src={layer.src} alt="" className="h-full w-full" />
                     </div>
                 ))}
+
                 <div
                     ref={textRef}
-                    className="pointer-events-none absolute inset-0 flex pt-32 justify-center px-6 text-center will-change-transform"
+                    className="pointer-events-none absolute inset-0 flex justify-center px-6 pt-32 text-center will-change-transform"
                     style={{ zIndex: textZ }}
                 >
                     <div className="pointer-events-auto max-w-5xl">{children}</div>
                 </div>
+
+                {bottom && (
+                    <div
+                        className="absolute inset-x-0 bottom-6 flex justify-center px-4"
+                        style={{ zIndex: 50 }}
+                    >
+                        {bottom}
+                    </div>
+                )}
             </div>
         </section>
     )

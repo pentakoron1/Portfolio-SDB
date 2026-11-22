@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react'
 import ForceGraph, { type NodeObject } from 'force-graph'
-import { interestTree } from '../../data/interests'
+import {interestsText, interestTree} from '../../data/interests'
 import { Section } from '../layout/Section'
+import ReactMarkdown from "react-markdown";
 
 type NodeType = 'field' | 'hobby' | 'tool'
 type GNode = NodeObject & { id: string; type: NodeType; r: number }
@@ -176,7 +177,10 @@ export function InterestsGraph() {
 
     return (
         <Section id="interests" eyebrow="Network" title="Interests">
-            <div className="relative">
+            <div className="max-w-prose space-y-3 leading-relaxed text-muted">
+                <ReactMarkdown>{interestsText.description}</ReactMarkdown>
+            </div>
+            <div className="relative mt-12">
                 <div ref={boxRef} className="h-[75vh] min-h-115 w-full" />
                 <ul className="pointer-events-none absolute left-0 top-0 space-y-1.5 font-mono text-xs text-muted">
                     <li><span className="mr-2 inline-block size-2.5 rounded-full bg-[#ff8a1f]" />Field</li>
