@@ -1,4 +1,4 @@
-export const highschool = {
+export const education = {
     title:
         'High school',
     description:
