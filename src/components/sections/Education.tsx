@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown'
 
 export function Education() {
     return (
-        <Section id="about" eyebrow="Signal" title="Education">
+        <Section id="education" eyebrow="Signal" title="Education">
             <h1 className="text-xl font-bold"> {highschool.title} </h1>
             <div className="max-w-prose space-y-3 leading-relaxed text-muted">
                 <ReactMarkdown>{highschool.description}</ReactMarkdown>
