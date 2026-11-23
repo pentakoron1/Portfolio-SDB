@@ -1,4 +1,6 @@
 export const quote = {
     text:
-        'Never stop *creating*',
+        'Never stop creating.',
+    author:
+    'Sylvain',
 } as const
