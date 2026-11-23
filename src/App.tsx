@@ -4,6 +4,7 @@ import { Projects } from './components/sections/Projects'
 import { InterestsGraph } from './components/sections/InterestsGraph'
 import {Education} from "./components/sections/Education.tsx";
 import {Gallery} from "./components/sections/Gallery.tsx";
+import {Quote} from "./components/sections/Quote.tsx";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Education/>
                 <InterestsGraph/>
                 <Gallery/>
+                <Quote/>
             </main>
             <Footer/>
         </>
