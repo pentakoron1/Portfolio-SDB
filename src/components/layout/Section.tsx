@@ -24,7 +24,7 @@ export function Section({ id, title, eyebrow, children, className = '' }: Sectio
     >
       <div className="mx-auto max-w-5xl px-6">
         {(eyebrow || title) && (
-          <header className="mb-5 md:mb-16">
+          <header className="mb-1 md:mb-10">
             {eyebrow && (
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">{eyebrow}</p>
             )}
