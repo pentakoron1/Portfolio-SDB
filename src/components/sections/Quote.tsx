@@ -130,7 +130,7 @@ export function Quote() {
                 ref={boxRef}
                 onPointerMove={onMove}
                 onPointerLeave={onLeave}
-                className="group relative overflow-hidden px-4 py-16 text-center md:py-24"
+                className="group relative overflow-hidden py-32 md:py-48 text-center md:py-24"
             >
                 {/* spotlight that follows the cursor */}
                 <div
@@ -138,7 +138,7 @@ export function Quote() {
                     className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                     style={{
                         background:
-                            'radial-gradient(400px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--color-accent) 22%, transparent), transparent 70%)',
+                            'radial-gradient(250px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--color-accent) 22%, transparent), transparent 70%)',
                     }}
                 />
 
