@@ -1,12 +1,18 @@
-# Space-themed engineering portfolio
+# Engineering portfolio
 
-Minimal sci-fi single-page portfolio built with **Vite**, **React**, **TypeScript**, **Tailwind CSS**, **Framer Motion**, and **React Three Fiber**.
+Futuristic single-page portfolio built with **Vite**, **React**, **TypeScript**, **Tailwind CSS**, **Framer Motion**, and **React Three Fiber**.
+
+**Live site:** https://pentakoron1.github.io/Portfolio-SDB/
 
 ## Features
 
-- Hero 3D scene (placeholder icosahedron or your GLB via `src/data/profile.ts`)
-- Projects with per-card wireframe previews and scroll-linked rotation
-- About, Skills, and Contact sections with placeholder copy in `src/data/`
+- Hero Parallax scene
+- Projects with interactive 3D models and scroll-linked rotation
+- Interests section with an interactive network graph.
+- Education section
+- Gallery section with Carousel
+- Animated quote at the bottom of the website
+- All data for the text stored in  `src/data/` and static files in `public/`
 
 ## Develop
 
@@ -15,19 +21,3 @@ npm install
 npm run dev
 ```
 
-## Build
-
-```bash
-npm run build
-npm run preview
-```
-
-## 3D assets
-
-See [public/models/README.md](public/models/README.md).
-
-## Customize
-
-- **Copy & links**: `src/data/profile.ts`, `projects.ts`, `skills.ts`
-- **Theme tokens**: `src/index.css` (`--color-*` variables)
-- **Scroll rotation strength**: `useCardScrollRotation(..., { turns: 0.75 })` in `ProjectCard.tsx`
