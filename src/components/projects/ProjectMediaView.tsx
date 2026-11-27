@@ -42,6 +42,11 @@ export function ProjectMediaView({ media }: { media: ProjectMedia }) {
             return <LoopVideo src={media.src} poster={media.poster} alt={media.alt} />
         case 'image':
         case 'banner':
-            return <img src={media.src} alt={media.alt} loading="lazy" className="h-full w-full object-cover" />
+            return <img
+                src={media.src}
+                alt={media.alt}
+                loading="lazy"
+                className="h-full w-full object-cover object-top"
+            />
     }
 }

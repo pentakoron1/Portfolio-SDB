@@ -28,7 +28,7 @@ export const projects: Project[] = [
         '\n\nI was part of the  **Team Astoria** from Institut Notre‑Dame d’Arlon, which won the national winner title at **CanSat Belgium**, rewarded by the opportunity to represent the country at the ESA European event (2 days trip to ESTEC) and another 5 days trip to Toulouse to explore aerospace engineering.\n',
     tags: ['Aerospace', '3D design', 'Engineering'],
     links: [{ label: 'Astoria website', href: 'https://astoria-cansat1.odoo.com' }],
-    media: { type: 'video', src:asset('/videos/cansat_3d_animation.mp4'), poster: asset('/images/gallery/cansat_astoria_wallpaper.webp'), alt: 'Exploded view of our CanSat'},
+    media: { type: 'video', src:asset('/videos/cansat_3d_animation.mp4'), poster: asset('/images/gallery/cansat_poster.webp'), alt: 'Exploded view of our CanSat'},
     fallbackShape: 'icosahedron',
   },
   {
