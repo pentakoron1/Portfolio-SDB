@@ -54,7 +54,7 @@ export const projects: Project[] = [
       'The core concept of Brazier is that it lets you track the use of items you bought, showing how much they costs you per month. ' +
       'You can thus also easily compare the long term rentability of a single purchase VS a subscription. ' +
       '\n\nMy goal is too make the app as user friendly as possible, while exploring concepts that no other app have used. ' +
-      'The app is on the process being available for everyone on **PlayStore**, and should be available on Fdroid by the end of 2026 (the #1 open-source apps platform).',
+      'The app is already available on **PlayStore**, and should be available on Fdroid by the end of 2026 (the #1 open-source apps platform).',
     tags: ['Flutter', 'Mobile App', 'Open-source'],
     links: [{ label: 'Github', href: 'https://github.com/pentakoron1/brazier' }],
     media: { type: 'banner', src:asset('/images/projects/brazier_banner.webp'), alt: 'Project banner' },
