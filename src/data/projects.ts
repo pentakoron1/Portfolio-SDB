@@ -8,9 +8,16 @@ export type Project = {
   tags: string[]
   links: { label: string; href: string }[]
   /** GLB/GLTF under /public; omit to use procedural wireframe shape */
-  modelPath?: string
+  media?: ProjectMedia
   fallbackShape: WireframeShape
 }
+
+export type ProjectMedia =
+    | { type: 'model'; path: string }
+    | { type: 'video'; src: string; poster?: string; alt: string }
+    | { type: 'image'; src: string; alt: string }    // image on the side
+    | { type: 'banner'; src: string; alt: string }   // wide image above the text
+
 
 export const projects: Project[] = [
   {
@@ -21,7 +28,7 @@ export const projects: Project[] = [
         '\n\nI was part of the  **Team Astoria** from Institut Notre‑Dame d’Arlon, which won the national winner title at **CanSat Belgium**, rewarded by the opportunity to represent the country at the ESA European event (2 days trip to ESTEC) and another 5 days trip to Toulouse to explore aerospace engineering.\n',
     tags: ['Aerospace', '3D design', 'Engineering'],
     links: [{ label: 'Astoria website', href: 'https://astoria-cansat1.odoo.com' }],
-    modelPath: asset('/models/double_helical_antennas_for_fpv_video_system.glb'),
+    media: { type: 'video', src:asset('/videos/cansat_3d_animation.mp4'), poster: asset('/images/gallery/cansat_poster.webp'), alt: 'Exploded view of our CanSat'},
     fallbackShape: 'icosahedron',
   },
   {
@@ -35,7 +42,7 @@ export const projects: Project[] = [
         '\n\nI see the **user experience**  as something that should have the least amount of friction possible, without limiting the full potential of the hardware.  Our first prototype already works with windows and android, so you can already play games with it, or even control slides of a PowerPoint presentation! ',
     tags: ['electronics', 'microcontrollers', 'coding'],
     links: [{ label: 'GitHub', href: '#' }],
-    modelPath: asset('/models/kolibrium_V1-0.glb'),
+    media: { type: 'model', path:asset('/models/kolibrium_V1-0.glb')},
     fallbackShape: 'torus',
   },
   {
@@ -50,10 +57,8 @@ export const projects: Project[] = [
       'The app is on the process being available for everyone on **PlayStore**, and should be available on Fdroid by the end of 2026 (the #1 open-source apps platform).',
     tags: ['Flutter', 'Mobile App', 'Open-source'],
     links: [{ label: 'Github', href: 'https://github.com/pentakoron1/brazier' }],
+    media: { type: 'banner', src:asset('/images/projects/brazier_banner.webp'), alt: 'Project banner' },
     fallbackShape: 'octahedron',
   },
 ]
 
-export const projectModelPaths = projects
-  .map((p) => p.modelPath)
-  .filter((path): path is string => Boolean(path))
